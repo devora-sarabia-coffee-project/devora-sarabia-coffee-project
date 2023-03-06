@@ -72,20 +72,7 @@ submitButton2.addEventListener('click', (e) => {
         roast: inputRoast
     }
     coffees.push(coffeeType);
-    var x = JSON.stringify(coffeeType)
-
-    coffees.forEach(function(coffee, index){
-        coffee[index] = JSON.stringify(coffee);
-    })
-
-
-    console.log(coffees);
-    window.localStorage.setItem("storedArray", JSON.stringify(coffees));
-    // var storedNames = JSON.parse(localStorage.coffees);
-    // localStorage.coffeeType = JSON.stringify(coffeeType);
-    var storedArray = JSON.parse(localStorage.getItem("storedArray"));
-    // .reload()
-    tbody.innerHTML = renderCoffees(storedArray);
+    tbody.innerHTML = renderCoffees(coffees)
 })
 
 
@@ -115,5 +102,19 @@ tbody.innerHTML = renderCoffees(coffees);
 
 roastSelection.addEventListener('change', updateCoffees);
 
+console.log(coffees)
+//submitButton2 is to somehow be used here?
+//Maybe make submitButton2 into a variable/function?
+//Then take that function and use it down here?
+
+// submitButton2.forEach(function(input, index){
+//     input[index] = JSON.stringify(input);
+// })
+
+window.localStorage.setItem("storedArray2", JSON.stringify(coffees));
+console.log(localStorage)
+var storedArray2 = JSON.parse(localStorage.getItem("storedArray2"));
+tbody.innerHTML = renderCoffees(storedArray2);
 
 
+console.log(localStorage)
