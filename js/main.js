@@ -72,7 +72,20 @@ submitButton2.addEventListener('click', (e) => {
         roast: inputRoast
     }
     coffees.push(coffeeType);
-    tbody.innerHTML = renderCoffees(coffees)
+    var x = JSON.stringify(coffeeType)
+
+    coffees.forEach(function(coffee, index){
+        coffee[index] = JSON.stringify(coffee);
+    })
+
+
+    console.log(coffees);
+    window.localStorage.setItem("storedArray", JSON.stringify(coffees));
+    // var storedNames = JSON.parse(localStorage.coffees);
+    // localStorage.coffeeType = JSON.stringify(coffeeType);
+    var storedArray = JSON.parse(localStorage.getItem("storedArray"));
+    // .reload()
+    tbody.innerHTML = renderCoffees(storedArray);
 })
 
 
