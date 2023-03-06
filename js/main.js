@@ -102,19 +102,3 @@ tbody.innerHTML = renderCoffees(coffees);
 
 roastSelection.addEventListener('change', updateCoffees);
 
-console.log(coffees)
-//submitButton2 is to somehow be used here?
-//Maybe make submitButton2 into a variable/function?
-//Then take that function and use it down here?
-
-// submitButton2.forEach(function(input, index){
-//     input[index] = JSON.stringify(input);
-// })
-
-window.localStorage.setItem("storedArray2", JSON.stringify(coffees));
-console.log(localStorage)
-var storedArray2 = JSON.parse(localStorage.getItem("storedArray2"));
-tbody.innerHTML = renderCoffees(storedArray2);
-
-
-console.log(localStorage)
